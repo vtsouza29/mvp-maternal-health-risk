@@ -1,0 +1,127 @@
+:root {
+  --cor-fundo: #f5f7fa;
+  --cor-cartao: #ffffff;
+  --cor-texto: #1f2933;
+  --cor-secundaria: #52606d;
+  --cor-primaria: #3b5bdb;
+  --cor-alto-risco: #c92a2a;
+  --cor-alto-risco-fundo: #fff5f5;
+  --cor-sem-risco: #2b8a3e;
+  --cor-sem-risco-fundo: #ebfbee;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+.container {
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 32px;
+  background: var(--cor-cartao);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  margin: 0 0 8px;
+}
+
+.subtitulo {
+  margin: 0 0 24px;
+  color: var(--cor-secundaria);
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.unidade {
+  font-weight: 400;
+  color: var(--cor-secundaria);
+}
+
+input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #cbd2d9;
+  border-radius: 6px;
+}
+
+input:focus {
+  outline: 2px solid var(--cor-primaria);
+  border-color: transparent;
+}
+
+button {
+  margin-top: 24px;
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--cor-primaria);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.resultado {
+  margin-top: 24px;
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 6px solid var(--cor-secundaria);
+}
+
+.resultado h2 {
+  margin: 0 0 4px;
+}
+
+.resultado p {
+  margin: 0;
+}
+
+.resultado.alto-risco {
+  border-color: var(--cor-alto-risco);
+  background: var(--cor-alto-risco-fundo);
+  color: var(--cor-alto-risco);
+}
+
+.resultado.sem-risco {
+  border-color: var(--cor-sem-risco);
+  background: var(--cor-sem-risco-fundo);
+  color: var(--cor-sem-risco);
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin: 0;
+    padding: 20px 16px;
+    border-radius: 0;
+  }
+
+  .grade {
+    grid-template-columns: 1fr;
+  }
+}

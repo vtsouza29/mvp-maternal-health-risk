@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Triagem de Risco Materno</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Triagem de Risco Materno</h1>
+      <p class="subtitulo">
+        Informe os sinais vitais da consulta para identificar gestantes de <strong>alto risco</strong>.
+        Ferramenta de apoio: não substitui a avaliação médica.
+      </p>
+    </header>
+
+    <form id="formulario-gestante" novalidate>
+      <div class="grade">
+        <label>Idade <span class="unidade">(anos)</span>
+          <input type="number" name="idade" min="10" max="70" step="1" required>
+        </label>
+        <label>Pressão sistólica <span class="unidade">(mmHg)</span>
+          <input type="number" name="pressao_sistolica" min="60" max="200" step="1" required>
+        </label>
+        <label>Pressão diastólica <span class="unidade">(mmHg)</span>
+          <input type="number" name="pressao_diastolica" min="30" max="140" step="1" required>
+        </label>
+        <label>Glicemia <span class="unidade">(mmol/L)</span>
+          <input type="number" name="glicemia" min="1" max="30" step="0.1" required>
+        </label>
+        <label>Temperatura corporal <span class="unidade">(°F — 98,6 °F = 37 °C)</span>
+          <input type="number" name="temperatura" min="95" max="107" step="0.1" required>
+        </label>
+        <label>Frequência cardíaca <span class="unidade">(bpm)</span>
+          <input type="number" name="frequencia_cardiaca" min="40" max="200" step="1" required>
+        </label>
+      </div>
+      <button type="submit">Classificar risco</button>
+    </form>
+
+    <section id="resultado" class="resultado" aria-live="polite" hidden></section>
+  </main>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
